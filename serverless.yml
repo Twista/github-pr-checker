@@ -1,0 +1,24 @@
+service: gh-pr-check
+
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+  region: us-west-2
+  memorySize: 128
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+functions:
+  check:
+    handler: main.run
+    memorySize: 128
+    timeout: 15
+    events:
+      - schedule: cron(0 8,13,17 ? * MON-FRI *)
+
+plugins:
+  - serverless-python-requirements
+  - serverless-dotenv-plugin
