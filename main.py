@@ -35,7 +35,8 @@ def run(event, context):
     pulls = []
     repo = gh_client.get_repo(GITHUB_REPO)
     for pull in repo.get_pulls(state='open', sort='created'):
-        if pull.created_at < date_from:
+        # check if matching date and title does not contain WIP
+        if pull.created_at < date_from and not ("wip" in pull.title.lower()):
             url = URL_TEMPLATE.format(number=pull.number)
             pulls.append(
                 "*<{}|{}>* from *{}* - _created {}_".format(url, pull.title, pull.user.login, timeago.format(pull.created_at, now)))
