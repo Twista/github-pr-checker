@@ -46,4 +46,8 @@ Configuration
  
 `SLACK_HOOK_URL` https://hooks.slack.com/services/...
 
+`SLACK_CHANNEL_NAME` e.g `#general`
+
+`SLACK_BOT_NAME` e.g `PR-Chek`
+
 `HOURS_OLD` since when we want to notify about Pull Requests
