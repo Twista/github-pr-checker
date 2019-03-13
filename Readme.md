@@ -40,7 +40,10 @@ sls deploy
 
 Configuration
 =====
-`GITHUB_TOKEN` is token you can obtain at https://github.com/settings/tokens 
-`GITHUB_REPO` target repository in `<org>/<repo>` format 
+`GITHUB_TOKEN` is token you can obtain at https://github.com/settings/tokens
+
+`GITHUB_REPO` target repository in `<org>/<repo>` format
+ 
 `SLACK_HOOK_URL` https://hooks.slack.com/services/...
+
 `HOURS_OLD` since when we want to notify about Pull Requests
